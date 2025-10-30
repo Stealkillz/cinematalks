@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CinemaTalks | Indian Cinema Fan Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1>CinemaTalks</h1>
+      <p>Celebrate iconic moments from Indian cinema. Share stills and short clips, and join fellow fans in heartfelt discussions about your favourite stars.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel upload-panel">
+      <h2>Start a new discussion</h2>
+      <form id="uploadForm">
+        <label>
+          Title
+          <input type="text" name="title" required placeholder="E.g. Rajinikanth's iconic intro scene" />
+        </label>
+        <label>
+          Description
+          <textarea name="description" required rows="4" placeholder="What makes this moment special? Share context, trivia, or your feelings."></textarea>
+        </label>
+        <label>
+          Fan Focus
+          <select name="actorCategory" required>
+            <option value="">Select</option>
+            <option value="Actor">Actor</option>
+            <option value="Actress">Actress</option>
+            <option value="Ensemble">Ensemble</option>
+          </select>
+        </label>
+        <label>
+          Cinema Region
+          <select name="cinemaRegion" required>
+            <option value="">Select</option>
+            <option value="Bollywood">Bollywood (Hindi)</option>
+            <option value="Tollywood">Tollywood (Telugu)</option>
+            <option value="Kollywood">Kollywood (Tamil)</option>
+            <option value="Mollywood">Mollywood (Malayalam)</option>
+            <option value="Sandalwood">Sandalwood (Kannada)</option>
+            <option value="Other">Other Indian Language</option>
+          </select>
+        </label>
+        <label class="file-label">
+          Media Upload
+          <input type="file" name="media" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm" required />
+          <small>Share a still or a short clip (max 30 MB)</small>
+        </label>
+        <button type="submit">Share with the community</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </section>
+
+    <section class="panel feed-panel">
+      <div class="feed-header">
+        <h2>Community showcase</h2>
+        <div class="filters">
+          <select id="regionFilter">
+            <option value="all">All regions</option>
+            <option value="Bollywood">Bollywood</option>
+            <option value="Tollywood">Tollywood</option>
+            <option value="Kollywood">Kollywood</option>
+            <option value="Mollywood">Mollywood</option>
+            <option value="Sandalwood">Sandalwood</option>
+            <option value="Other">Other</option>
+          </select>
+          <select id="categoryFilter">
+            <option value="all">All focuses</option>
+            <option value="Actor">Actors</option>
+            <option value="Actress">Actresses</option>
+            <option value="Ensemble">Ensembles</option>
+          </select>
+        </div>
+      </div>
+      <div id="feed" class="feed"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with love for Indian cinema superfans. Keep discussions respectful and spoiler-tag major reveals!</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
